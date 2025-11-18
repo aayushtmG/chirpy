@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	// "fmt"
 	"net/http"
-	"strings"
 )
 
 
@@ -51,14 +50,14 @@ func handleChirpsValidate(w http.ResponseWriter,r *http.Request){
 // 	}
 // 	return strings.Join(splited, " ")
 // }
-func getCleanedBody(body string, badWords map[string]struct{}) string {
-	words := strings.Split(body, " ")
-	for i, word := range words {
-		loweredWord := strings.ToLower(word)
-		if _, ok := badWords[loweredWord]; ok {
-			words[i] = "****"
-		}
-	}
-	cleaned := strings.Join(words, " ")
-	return cleaned
-}
+// func getCleanedBody(body string, badWords map[string]struct{}) string {
+// 	words := strings.Split(body, " ")
+// 	for i, word := range words {
+// 		loweredWord := strings.ToLower(word)
+// 		if _, ok := badWords[loweredWord]; ok {
+// 			words[i] = "****"
+// 		}
+// 	}
+// 	cleaned := strings.Join(words, " ")
+// 	return cleaned
+// }
